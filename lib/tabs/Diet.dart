@@ -26,7 +26,7 @@ class Diet extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      'Tracker',
+                      'Tracker', // todo: make a tracker
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w900,

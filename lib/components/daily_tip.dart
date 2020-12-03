@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class DailyTip extends StatelessWidget {
 
   final Map<String, String> element = {
-    'title': '3 Main workout tips',
-    'subtitle': 'The American Council on Exercises (ACE) recently surveyed 3,000 ACE-certificated personal trainers about the best!',
-    'image': 'assets/images/image011.jpg',
+    'name': 'Urvish Bhaliya, this will come from #',
+    'subtitle': 'Happy Friday, here trainer will add his tips himself and photograph too', //set limit = 45-50 for subtitle
+    'image': 'assets/images/urvish.jpg',
   };
 
   @override
@@ -33,7 +33,7 @@ class DailyTip extends StatelessWidget {
           ),
         ),
         Text(
-          this.element['title'],
+          this.element['name'],
           style: TextStyle(fontSize: 14.0),
         ),
         Container(

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class MainCardPrograms extends StatelessWidget {
   final Map<String, String> cardInfo = {
     'title': 'For You',
-    'time': '8 min',
-    'image': 'assets/images/image008.jpg',
+    'time': '15 min',
+    'image': 'assets/images/image008.png', // TODO: set ramdom exercises from exercises
   };
 
   @override

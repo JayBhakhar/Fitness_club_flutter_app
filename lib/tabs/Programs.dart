@@ -1,69 +1,15 @@
 import 'package:fitness_flutter/components/daily_tip.dart';
 import 'package:fitness_flutter/components/header.dart';
-import 'package:fitness_flutter/components/image_card_with_basic_footer.dart';
 import 'package:fitness_flutter/components/section.dart';
 import 'package:fitness_flutter/components/image_card_with_internal.dart';
 import 'package:fitness_flutter/components/main_card_programs.dart';
 import 'package:fitness_flutter/components/user_photo.dart';
 import 'package:fitness_flutter/components/user_tip.dart';
-import 'package:fitness_flutter/models/exercise.dart';
-import 'package:fitness_flutter/pages/activity_detail.dart';
+
 
 import 'package:flutter/material.dart';
 
 class Programs extends StatelessWidget {
-  final List<Exercise> exercises = [
-    Exercise(
-      image: 'assets/images/image001.jpg',
-      title: 'Easy Start',
-      time: '5 min',
-      difficult: 'Low',
-    ),
-    Exercise(
-      image: 'assets/images/image002.jpg',
-      title: 'Medium Start',
-      time: '10 min',
-      difficult: 'Medium',
-    ),
-    Exercise(
-      image: 'assets/images/image003.jpg',
-      title: 'Pro Start',
-      time: '25 min',
-      difficult: 'High',
-    )
-  ];
-
-  List<Widget> generateList(BuildContext context) {
-    List<Widget> list = [];
-    int count = 0;
-    exercises.forEach((exercise) {
-      Widget element = Container(
-        margin: EdgeInsets.only(right: 20.0),
-        child: GestureDetector(
-          child: ImageCardWithBasicFooter(
-            exercise: exercise,
-            tag: 'imageHeader$count',
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) {
-                  return ActivityDetail(
-                    exercise: exercise,
-                    tag: 'imageHeader$count',
-                  );
-                },
-              ),
-            );
-          },
-        ),
-      );
-      list.add(element);
-      count++;
-    });
-    return list;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,27 +27,17 @@ class Programs extends StatelessWidget {
                 ),
                 MainCardPrograms(), // MainCard
                 Section(
-                  title: 'Fat burning',
-                  horizontalList: this.generateList(context),
-                ),
-                Section(
-                  title: 'Abs Generating',
+                  title: 'Workouts',
                   horizontalList: <Widget>[
-                    ImageCardWithInternal(
-                      image: 'assets/images/image004.jpg',
-                      title: 'Core \nWorkout',
-                      duration: '7 min',
-                    ),
-                    ImageCardWithInternal(
-                      image: 'assets/images/image004.jpg',
-                      title: 'Core \nWorkout',
-                      duration: '7 min',
-                    ),
-                    ImageCardWithInternal(
-                      image: 'assets/images/image004.jpg',
-                      title: 'Core \nWorkout',
-                      duration: '7 min',
-                    ),
+                    ImageCardWithInternal(image: 'assets/images/core.jpg',title: 'Core \nWorkout', duration: '90 min'),
+                    ImageCardWithInternal(image: 'assets/images/chest.png', title: 'Chest \nWorkout', duration: '35 min',),
+                    ImageCardWithInternal(image: 'assets/images/biceps.jpg', title: 'Biceps \nWorkout', duration: '15 min'),
+                    ImageCardWithInternal(image: 'assets/images/triceps.png', title: 'Triceps \nWorkout', duration: '35 min'),
+                    ImageCardWithInternal(image: 'assets/images/back.jpg', title: 'Back \nWorkout', duration: '35 min'),
+                    ImageCardWithInternal(image: 'assets/images/abs.jpg', title: 'Abs \nWorkout', duration: '35 min'),
+                    ImageCardWithInternal(image: 'assets/images/leg.jpg', title: 'Leg \nWorkout', duration: '35 min'),
+                    ImageCardWithInternal(image: 'assets/images/shoulders.png', title: 'Shoulders \nWorkout', duration: '35 min'),
+                    ImageCardWithInternal(image: 'assets/images/cardio.jpg', title: 'Cardio \nWorkout', duration: '20 min'),
                   ],
                 ),
                 Container(
@@ -113,30 +49,25 @@ class Programs extends StatelessWidget {
                   child: Column(
                     children: <Widget>[
                       Section(
-                        title: 'Daily Tips',
+                        title: 'Daily tips of Trainer',
                         horizontalList: <Widget>[
                           UserTip(
-                            image: 'assets/images/image010.jpg',
-                            name: 'User Img',
+                            image: 'assets/images/urvish.jpg', // TODO: if you click here,it will send you to trainer info
+                            name: 'Urvish',
                           ),
                           UserTip(
-                            image: 'assets/images/image010.jpg',
-                            name: 'User Img',
+                            image: 'assets/images/roimil.jpg',
+                            name: 'Romil',
                           ),
                           UserTip(
-                            image: 'assets/images/image010.jpg',
-                            name: 'User Img',
-                          ),
-                          UserTip(
-                            image: 'assets/images/image010.jpg',
-                            name: 'User Img',
+                            image: 'assets/images/divyang.jpg',
+                            name: 'Divyang',
                           ),
                         ],
                       ),
                       Section(
                         horizontalList: <Widget>[
-                          DailyTip(),
-                          DailyTip(),
+                          DailyTip(), // todo: it should be come from gym trainer
                           DailyTip(),
                         ],
                       ),

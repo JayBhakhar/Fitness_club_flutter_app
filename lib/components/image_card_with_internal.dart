@@ -40,7 +40,7 @@ class ImageCardWithInternal extends StatelessWidget {
           Text(
             this.title,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 28,
               fontWeight: FontWeight.w900,
             ),
